@@ -1,0 +1,21 @@
+{
+    "name": "stgit90/dedect-valid-card",
+    "description": "dedect and validate cards",
+    "type": "library",
+    "require": {
+        "phpunit/phpunit": "^9.1"
+    },
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "TS",
+            "email": "contact.sargsyan@gmai.com"
+        }
+    ],
+    "minimum-stability": "stable",
+    "autoload": {
+        "psr-4": {
+            "CardValidDetect\\": "src/"
+        }
+    }
+}
