@@ -4,7 +4,7 @@ Utility to valid and determine bank card type by stgit90
 
 ### Installation ###
 ```
-composer require 
+composer require stgit90/detect-valid-card
 ```
 
 
