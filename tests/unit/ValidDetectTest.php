@@ -27,6 +27,6 @@ class ValidDetectTest extends TestCase
      */
     public function testPushAndPop($expected, $card)
     {
-        $this->assertSame($expected, $this->ValidDetect->detect($card));
+        $this->assertSame($expected, $this->ValidDetect->detect($card)->getType());
     }
 }

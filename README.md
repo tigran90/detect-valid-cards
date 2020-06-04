@@ -1,29 +1,22 @@
-# README #
+# Valid and Dedect bank cards #
 
-This README would normally document whatever steps are necessary to get your application up and running.
+Utility to valid and determine bank card type by stgit90
 
-### What is this repository for? ###
+### Installation ###
+```
+composer require 
+```
 
-* Quick summary
-* Version
-* [Learn Markdown](https://bitbucket.org/tutorials/markdowndemo)
 
-### How do I get set up? ###
+### Usage ###
 
-* Summary of set up
-* Configuration
-* Dependencies
-* Database configuration
-* How to run tests
-* Deployment instructions
+```
+require "/vendor/autoload.php";
+use CardValidDetect\ValidDetect;
 
-### Contribution guidelines ###
-
-* Writing tests
-* Code review
-* Other guidelines
-
-### Who do I talk to? ###
-
-* Repo owner or admin
-* Other community or team contact
+$detector = new ValidDetect();
+$card = '4916847576752405';
+if($detector->detect('4916847576752405')->isValid()){
+    echo $detector->getType() //Visa
+}
+```

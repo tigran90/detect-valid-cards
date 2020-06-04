@@ -3,12 +3,24 @@
 
 namespace CardValidDetect;
 use \Exception;
+use phpDocumentor\Reflection\Types\This;
+
 /**
  * Class ValidDetect
  * @package CardValidDetect
  */
 class ValidDetect
 {
+    /**
+     * @var bool $is_valid
+     */
+    private bool $is_valid;
+
+    /**
+     * @var string $types
+     */
+    private string $type;
+
     /**
      * @var array
      */
@@ -69,23 +81,35 @@ class ValidDetect
             }
             $total+=$digit;
         }
-        return ($total % 10 == 0) ? TRUE : FALSE;
+        return $this->is_valid = ($total % 10 == 0) ? TRUE : FALSE;
+    }
+
+    public function isValid(): bool
+    {
+        return $this->is_valid;
     }
 
     /**
-     * @param string $card_number
      * @return string
-     * @throws Exception
      */
-    public function detect(string $card_number) : string
+    public function getType(): string
     {
-        if(!$this->valid($card_number)){
-            throw new Exception('Card number is invalid');
-        }
-        foreach ($this->card_types as $type=>$pattern) {
-            if ($this->$type($card_number)) {
-                return $type;
+        return $this->type;
+    }
+    /**
+     * @param string $card_number
+     * @return $this|string
+     */
+    public function detect(string $card_number) : ValidDetect
+    {
+        if($this->valid($card_number)){
+            foreach ($this->card_types as $type=>$pattern) {
+                if ($this->$type($card_number)) {
+                     $this->type = $type;
+                     break;
+                }
             }
         }
+        return $this;
     }
 }
