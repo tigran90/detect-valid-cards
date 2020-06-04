@@ -2,7 +2,8 @@
     "name": "stgit90/detect-valid-card",
     "description": "Utility to valid and determine bank card type by stgit90",
     "type": "library",
-    "minimum-stability": "stable",
+    "minimum-stability": "dev",
+    "version": "1.0.1",
     "license": "MIT",
     "authors": [
         {
