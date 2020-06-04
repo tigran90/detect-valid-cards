@@ -1,10 +1,8 @@
 {
-    "name": "stgit90/dedect-valid-card",
-    "description": "dedect and validate cards",
+    "name": "stgit90/detect-valid-card",
+    "description": "Utility to valid and determine bank card type by stgit90",
     "type": "library",
-    "require": {
-        "phpunit/phpunit": "^9.1"
-    },
+    "minimum-stability": "stable",
     "license": "MIT",
     "authors": [
         {
@@ -12,7 +10,13 @@
             "email": "contact.sargsyan@gmai.com"
         }
     ],
-    "minimum-stability": "stable",
+    "require": {
+        "php": "^7.2.5",
+        "phpunit/phpunit": "^9.1"
+    },
+    "config": {
+        "optimize-autoloader": true
+    },
     "autoload": {
         "psr-4": {
             "CardValidDetect\\": "src/"
