@@ -14,12 +14,12 @@ class ValidDetect
     /**
      * @var bool $is_valid
      */
-    private bool $is_valid;
+    private $is_valid;
 
     /**
      * @var string $types
      */
-    private string $type;
+    private  $type;
 
     /**
      * @var array
