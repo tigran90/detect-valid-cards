@@ -65,10 +65,13 @@ class ValidDetect
      * @param string $card_number
      * @return bool
      */
-    private function valid(string $card_number) : bool
+    private function valid(?string $card_number) : bool
     {
         $card_number=preg_replace('/\D/', '', $card_number);
         $number_length=strlen($card_number);
+        if($number_length<6){
+            return $this->is_valid = false;
+        }
         $parity=$number_length % 2;
         $total=0;
         for ($i=0; $i<$number_length; $i++) {
@@ -81,7 +84,7 @@ class ValidDetect
             }
             $total+=$digit;
         }
-        return $this->is_valid = ($total % 10 == 0) ? TRUE : FALSE;
+        return $this->is_valid = ($total % 10 == 0) ? true : false;
     }
 
     public function isValid(): bool
@@ -92,7 +95,7 @@ class ValidDetect
     /**
      * @return string
      */
-    public function getType(): string
+    public function getType(): ?string
     {
         return $this->type;
     }
@@ -100,7 +103,7 @@ class ValidDetect
      * @param string $card_number
      * @return $this|string
      */
-    public function detect(string $card_number) : ValidDetect
+    public function detect(?string $card_number) : ValidDetect
     {
         if($this->valid($card_number)){
             foreach ($this->card_types as $type=>$pattern) {
