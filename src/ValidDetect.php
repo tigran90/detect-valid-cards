@@ -3,9 +3,6 @@
 
 namespace CardValidDetect;
 
-use \Exception;
-use phpDocumentor\Reflection\Types\This;
-
 /**
  * Class ValidDetect
  * @package CardValidDetect
